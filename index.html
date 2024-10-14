@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Scoring Panahan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="recurve">Recurve</button>
+            <button class="tab-btn" data-tab="nasional">Nasional</button>
+            <button class="tab-btn" data-tab="compound">Compound</button>
+        </div>
+
+        <div class="class-selection">
+            <label>Kelas:</label>
+            <button class="class-btn active" data-class="SD/MI Kelas 4-6 - 40m">SD/MI Kelas 4-6 - 40m</button>
+            <button class="class-btn" data-class="SMP/MTs - 50m">SMP/MTs - 50m</button>
+        </div>
+
+        <div class="category-selection">
+            <label>Jenis Regu:</label>
+            <button class="category-btn active" data-category="Individu Putra">Individu Putra</button>
+            <button class="category-btn" data-category="Individu Putri">Individu Putri</button>
+        </div>
+
+        <button id="download-btn">⬇️ Unduh Scoresheet</button>
+
+        <table id="score-table">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Nama Peserta</th>
+                    <th>Klub</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+
+        <div id="scoring-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Scoring for <span id="archer-name"></span></h2>
+                <div class="session-tabs">
+                    <button class="session-tab active" data-session="1">Sesi 1</button>
+                    <button class="session-tab" data-session="2">Sesi 2</button>
+                </div>
+                <table id="scoring-table">
+                    <thead>
+                        <tr>
+                            <th>End</th>
+                            <th colspan="6">Shot</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Scoring rows will be dynamically added here -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="7">X+10:</td>
+                            <td id="x-plus-10">0</td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">X:</td>
+                            <td id="x-count">0</td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">Total:</td>
+                            <td id="session-total">0</td>
+                        </tr>
+                    </tfoot>
+                </table>
+                <div class="accumulation">
+                    Akumulasi Skor: <span id="total-accumulation">0</span>
+                </div>
+                <button id="save-scores">Save Scores</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
